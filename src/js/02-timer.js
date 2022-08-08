@@ -10,7 +10,7 @@ const dataMinutes = document.querySelector('[data-minutes]')
 const dataSeconds = document.querySelector ('[data-seconds]')
 const flatPick = document.querySelector('input[type ="text"]')
 
-btnStart.setAttribute('disabled','disabled')
+btnStart.disabled = true
 const options = {
   enableTime: true,
   time_24hr: true,

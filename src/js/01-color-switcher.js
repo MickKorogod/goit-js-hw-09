@@ -7,11 +7,12 @@ startBtn.addEventListener("click", () => {
   timerId = setInterval(() => {
   return  body.style.background = (`#${Math.floor(Math.random() * 16777215).toString(16)}`);
   }, 1000);  
-   startBtn.setAttribute('disabled', true)
+  startBtn.disabled = true
+  stopBtn.disabled = false
 });
-
 
 stopBtn.addEventListener("click", () => {
   clearInterval(timerId);
-  startBtn.setAttribute('disabled', false)
+  startBtn.disabled = false
+  stopBtn.disabled = true
 }); 
