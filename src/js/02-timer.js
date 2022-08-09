@@ -9,6 +9,7 @@ const dataHours = document.querySelector('[data-hours]')
 const dataMinutes = document.querySelector('[data-minutes]')
 const dataSeconds = document.querySelector ('[data-seconds]')
 const flatPick = document.querySelector('input[type ="text"]')
+const flatPickInput = document.querySelector('.flatpickr-input')
 
 btnStart.disabled = true
 const options = {
@@ -18,11 +19,11 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
       if (selectedDates[0] < currentDate) {
-          window.alert("Please choose a date in the future")
-          return
-      };
+          window.alert("Please choose a date in the future")   
+    };
       const choiceDate = selectedDates[0].getTime()
-      btnStart.removeAttribute('disabled')
+    btnStart.removeAttribute('disabled')
+
       function Countdown() {
         const intervalId = setInterval(() => {
         
@@ -34,7 +35,9 @@ const options = {
         }
         convertMs(deadline);
     }, 1000)
-   console.log(intervalId) 
+        console.log(intervalId) 
+        btnStart.disabled = true;
+        
 }
       btnStart.addEventListener('click', Countdown) 
   },
