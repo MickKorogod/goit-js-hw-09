@@ -25,7 +25,7 @@ e.preventDefault()
     amount: +amount.value
   }
   for (let i = 0; i < inputValue.amount; i += 1) {
-    createPromise( i, inputValue.delay)
+    createPromise( i+1, inputValue.delay)
     .then(({position, delay}) => {
       Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
